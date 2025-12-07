@@ -53,6 +53,16 @@ function updateTheme() {
 
 speakerSelect.addEventListener("change", updateTheme);
 
+const clearBtn = document.getElementById("clear");
+
+clearBtn.addEventListener("click", () => {
+    if (confirm("Effacer toute la conversation ?")) {
+        messages = [];
+        localStorage.setItem("journal", JSON.stringify(messages));
+        render();
+    }
+});
+
 // on applique l'ambiance au chargement
 updateTheme();
 
