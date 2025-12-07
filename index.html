@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <title>Journal à deux voix</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <div class="app">
+        <h1>Journal à deux voix</h1>
+
+        <div id="messages" class="messages"></div>
+
+        <div class="input-zone">
+            <select id="speaker">
+                <option value="moi">Moi</option>
+                <option value="maman">Maman</option>
+            </select>
+
+            <textarea id="text" placeholder="Écris ton message ici…"></textarea>
+
+            <button id="send">Ajouter</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
