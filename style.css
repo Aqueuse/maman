@@ -45,20 +45,24 @@ h1 {
 }
 
 .clear {
-    position: absolute;
+    position: fixed;
     top: 20px;
     right: 20px;
-    background: #c0392b;
-    color: white;
-    padding: 6px 10px;
+
+    background: #00000015;
+    color: #333;
+    padding: 8px 14px;
     border-radius: 6px;
-    border: none;
+    border: 1px solid #ccc;
+
     cursor: pointer;
     font-size: 14px;
+
+    backdrop-filter: blur(4px);
 }
 
 .clear:hover {
-    background: #e74c3c;
+    background: #00000025;
 }
 
 .messages {
