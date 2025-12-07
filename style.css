@@ -17,14 +17,18 @@ body.moi {
     color: #222;
 }
 
-/* ambiance douce (maman) */
 body.maman {
     background-color: #fff8e6;
     background-image: url('maman.png');
     background-repeat: no-repeat;
-    background-position: right bottom;
-    background-size: 45%;
-    color: #332200;
+
+    /* centrage vertical + position droite */
+    background-position: calc(100% - 40px) center;
+
+    /* taille de l'image */
+    background-size: 35%;
+
+    /* transition douce */
     transition: background 0.4s ease, color 0.4s ease;
 }
 
