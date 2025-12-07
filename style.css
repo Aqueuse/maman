@@ -11,6 +11,19 @@ body {
     color: #333;
 }
 
+/* ambiance neutre (moi) */
+body.moi {
+    background: #fafafa;
+    color: #222;
+}
+
+/* ambiance douce (maman) */
+body.maman {
+    background: #fff8e6;
+    color: #332200;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
 .app {
     max-width: 700px;
     margin: 0 auto;
