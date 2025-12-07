@@ -31,12 +31,30 @@ body.maman {
 .app {
     max-width: 700px;
     margin: 0 auto;
+    position: relative;
 }
 
 h1 {
     text-align: center;
     margin-bottom: 20px;
     font-weight: 600;
+}
+
+.clear {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #c0392b;
+    color: white;
+    padding: 6px 10px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.clear:hover {
+    background: #e74c3c;
 }
 
 .messages {
