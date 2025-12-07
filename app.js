@@ -46,5 +46,15 @@ textInput.addEventListener("keydown", e => {
     }
 });
 
+// change l'ambiance selon le speaker sélectionné
+function updateTheme() {
+    document.body.className = speakerSelect.value;
+}
+
+speakerSelect.addEventListener("change", updateTheme);
+
+// on applique l'ambiance au chargement
+updateTheme();
+
 // affichage initial
 render();
