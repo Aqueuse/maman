@@ -15,6 +15,9 @@ body {
 body.moi {
     background: #fafafa;
     color: #222;
+
+    /* transition douce */
+    transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 body.maman {
