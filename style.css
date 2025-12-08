@@ -17,7 +17,7 @@ body.moi {
     color: #222;
 
     /* transition douce */
-    transition: background-color 0.4s ease, color 0.4s ease;
+    transition: background-color 1s ease, color 1s ease;
 }
 
 body.maman {
@@ -32,7 +32,7 @@ body.maman {
     background-size: 60%;
 
     /* transition douce */
-    transition: background-color 0.4s ease, color 0.4s ease;
+    transition: background-color 1s ease, color 1s ease;
 }
 
 .app {
