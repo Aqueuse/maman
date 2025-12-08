@@ -1,6 +1,6 @@
 # Journal à deux voix
 
-<img src="maman.png" alt="maman lumineuse" width="300"/>
+<img width="1032" height="899" alt="visuel" src="https://github.com/user-attachments/assets/188a3376-c6b4-4802-b03e-e09b8a951f71" />
 
 Un petit outil minimaliste pour pratiquer un **journal intérieur à deux voix** :
 
