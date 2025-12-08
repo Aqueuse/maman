@@ -18,7 +18,7 @@ body.moi {
 }
 
 body.maman {
-    background-color: #fff8e6;
+    background-color: #ca8b2c;
     background-image: url('maman.png');
     background-repeat: no-repeat;
 
@@ -26,7 +26,7 @@ body.maman {
     background-position: calc(100% - 150px) center;
 
     /* taille de l'image */
-    background-size: 20%;
+    background-size: 80%;
 
     /* transition douce */
     transition: background-color 0.4s ease, color 0.4s ease;
@@ -94,7 +94,7 @@ h1 {
 
 /* maman */
 .message.maman {
-    background: #fff4d7;
+    background: #ffffff80;
     align-self: flex-end;
 }
 
