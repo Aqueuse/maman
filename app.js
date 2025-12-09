@@ -6,33 +6,58 @@ const messagesDiv = document.getElementById("messages");
 const speakerSelect = document.getElementById("speaker");
 const textInput = document.getElementById("text");
 const sendBtn = document.getElementById("send");
+const imageInput = document.getElementById("imageInput");
+const clearBtn = document.getElementById("clear");
+
+let currentImageURL = null;
 
 // affichage des messages
 function render() {
     messagesDiv.innerHTML = "";
 
     messages.forEach(msg => {
-        const el = document.createElement("div");
-        el.classList.add("message", msg.speaker);
-        el.textContent = msg.text;
-        messagesDiv.appendChild(el);
+        if (msg.image) {
+            const img = document.createElement("img");
+            img.src = msg.image;
+            img.classList.add("message-image");
+            el.appendChild(img);
+        }
+        else {
+            const el = document.createElement("div");
+            el.classList.add("message", msg.speaker);
+            el.textContent = msg.text;
+            messagesDiv.appendChild(el);
+        }
     });
 
     messagesDiv.scrollTop = messagesDiv.scrollHeight;
 }
 
-// ajout d’un message
 function addMessage() {
     const text = textInput.value.trim();
-    if (!text) return;
+    if (!text && !currentImageURL) return;
 
     const speaker = speakerSelect.value;
 
-    messages.push({ speaker, text });
+    messages.push({
+        speaker,
+        text,
+        image: currentImageURL || null
+    });
+
     localStorage.setItem("journal", JSON.stringify(messages));
 
+    // reset
     textInput.value = "";
+    imageInput.value = "";
+    currentImageURL = null;
+
     render();
+}
+
+// change l'ambiance selon le speaker sélectionné (moi ou maman)
+function updateTheme() {
+    document.body.className = speakerSelect.value;
 }
 
 // bouton
@@ -46,14 +71,17 @@ textInput.addEventListener("keydown", e => {
     }
 });
 
-// change l'ambiance selon le speaker sélectionné
-function updateTheme() {
-    document.body.className = speakerSelect.value;
-}
+imageInput.addEventListener("change", () => {
+    const file = imageInput.files[0];
+    if (!file) {
+        currentImageURL = null;
+        return;
+    }
+
+    currentImageURL = URL.createObjectURL(file);
+});
 
 speakerSelect.addEventListener("change", updateTheme);
-
-const clearBtn = document.getElementById("clear");
 
 clearBtn.addEventListener("click", () => {
     if (confirm("Effacer toute la conversation ?")) {
