@@ -79,6 +79,7 @@ imageInput.addEventListener("change", () => {
 
     const url = URL.createObjectURL(file);
     previewImage.src = url;
+    previewImage.style.display = "block";
 });
 
 clearBtn.addEventListener("click", () => {
