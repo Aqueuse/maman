@@ -17,6 +17,7 @@ function render() {
 
     messages.forEach(msg => {
         if (msg.image) {
+            const el = document.createElement("div");
             const img = document.createElement("img");
             img.src = msg.image;
             img.classList.add("message-image");
