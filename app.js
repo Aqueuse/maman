@@ -7,7 +7,7 @@ const speakerSelect = document.getElementById("speaker");
 const textInput = document.getElementById("text");
 const sendBtn = document.getElementById("send");
 const clearBtn = document.getElementById("clear");
-const imageInput = document.getElementById("image-input");
+const imageInput = document.getElementById("image-input-file-chooser");
 const previewImage = document.getElementById("preview-image");
 
 let currentImageURL = null;
@@ -64,6 +64,10 @@ textInput.addEventListener("keydown", e => {
 });
 
 speakerSelect.addEventListener("change", updateTheme);
+
+previewButton.addEventListener("click", () => {
+    imageInput.click();
+});
 
 imageInput.addEventListener("change", () => {
     const file = imageInput.files[0];
