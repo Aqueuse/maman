@@ -7,7 +7,7 @@ const speakerSelect = document.getElementById("speaker");
 const textInput = document.getElementById("text");
 const sendBtn = document.getElementById("send");
 const clearBtn = document.getElementById("clear");
-const imageInput = document.getElementById("imageInput");
+const imageInput = document.getElementById("image-input");
 const previewImage = document.getElementById("preview-image");
 
 let currentImageURL = null;
