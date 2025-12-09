@@ -7,6 +7,8 @@ const speakerSelect = document.getElementById("speaker");
 const textInput = document.getElementById("text");
 const sendBtn = document.getElementById("send");
 const clearBtn = document.getElementById("clear");
+const imageInput = document.getElementById("imageInput");
+const previewImage = document.getElementById("preview-image");
 
 let currentImageURL = null;
 
@@ -62,6 +64,17 @@ textInput.addEventListener("keydown", e => {
 });
 
 speakerSelect.addEventListener("change", updateTheme);
+
+imageInput.addEventListener("change", () => {
+    const file = imageInput.files[0];
+    if (!file) {
+        previewImage.src = "";
+        return;
+    }
+
+    const url = URL.createObjectURL(file);
+    previewImage.src = url;
+});
 
 clearBtn.addEventListener("click", () => {
     if (confirm("Effacer toute la conversation ?")) {
