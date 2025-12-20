@@ -4,7 +4,6 @@ let messages = JSON.parse(localStorage.getItem("journal")) || [];
 // DOM refs
 const messagesDiv = document.getElementById("messages");
 const speakerSelect = document.getElementById("speaker");
-const textInput = document.getElementById("text");
 const sendBtn = document.getElementById("send");
 const clearBtn = document.getElementById("clear");
 const imageInput = document.getElementById("image-input-file-chooser");
@@ -33,7 +32,7 @@ function render() {
 //////////////////////////////
 
 sendBtn.addEventListener("click", () => {  // send message (by clicking button)
-    const text = textInput.value.trim();
+    const text = textArea.value.trim();
     if (!text && !currentImageURL) return;
 
     const speaker = speakerSelect.value;
@@ -47,17 +46,17 @@ sendBtn.addEventListener("click", () => {  // send message (by clicking button)
     localStorage.setItem("journal", JSON.stringify(messages));
 
     // reset
-    textInput.value = "";
+    textArea.value = "";
     currentImageURL = null;
 
     render();
 });
 
-textInput.addEventListener("keydown", e => { // send message (by pushing enter key)
+textArea.addEventListener("keydown", e => { // send message (by pushing enter key)
     e.preventDefault();
 
     if (e.key === "Enter" && !e.shiftKey) {
-            const text = textInput.value.trim();
+            const text = textArea.value.trim();
     if (!text && !currentImageURL) return;
 
     const speaker = speakerSelect.value;
@@ -71,7 +70,7 @@ textInput.addEventListener("keydown", e => { // send message (by pushing enter k
     localStorage.setItem("journal", JSON.stringify(messages));
 
     // reset
-    textInput.value = "";
+    textArea.value = "";
     currentImageURL = null;
 
     render();
