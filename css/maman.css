@@ -17,6 +17,13 @@ body.maman {
 .message.maman {
     background: #fff4d7;
     align-self: flex-end;
+
+    font-family: "Sour Gummy", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 10;
+    font-style: normal;
+    font-variation-settings:
+    "wdth" 100;
 }
 
 textarea.maman {

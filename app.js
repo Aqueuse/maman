@@ -53,8 +53,6 @@ sendBtn.addEventListener("click", () => {  // send message (by clicking button)
 });
 
 textArea.addEventListener("keydown", e => { // send message (by pushing enter key)
-    e.preventDefault();
-
     if (e.key === "Enter" && !e.shiftKey) {
             const text = textArea.value.trim();
     if (!text && !currentImageURL) return;
