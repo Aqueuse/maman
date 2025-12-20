@@ -19,7 +19,7 @@ body.maman {
     align-self: flex-end;
 }
 
-textarea {
+textarea.maman {
     width: 100%;
     height: 100px;
     padding: 10px;
