@@ -1,6 +1,6 @@
 body.maman {
     background-color: #ca8b2c;
-    background-image: url('maman.png');
+    background-image: url('../maman.png');
     background-repeat: no-repeat;
 
     /* centrage vertical + position droite */

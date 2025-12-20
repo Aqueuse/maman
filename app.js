@@ -111,8 +111,5 @@ clearBtn.addEventListener("click", () => { // clear the conversation
 //////////// INIT //////////////
 ////////////////////////////////
 
-// on applique l'ambiance au chargement
-updateTheme();
-
 // affichage initial
 render();
