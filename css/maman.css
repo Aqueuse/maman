@@ -1,0 +1,31 @@
+body.maman {
+    background-color: #ca8b2c;
+    background-image: url('maman.png');
+    background-repeat: no-repeat;
+
+    /* centrage vertical + position droite */
+    background-position: center;
+
+    /* taille de l'image */
+    background-size: 60%;
+
+    /* transition douce */
+    transition: background-color 1s ease, color 1s ease;
+}
+
+/* maman */
+.message.maman {
+    background: #fff4d7;
+    align-self: flex-end;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    resize: vertical;
+    font-family: inherit;
+	background-color: #fef1b1;    
+}

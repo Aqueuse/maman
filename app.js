@@ -10,6 +10,7 @@ const clearBtn = document.getElementById("clear");
 const imageInput = document.getElementById("image-input-file-chooser");
 const addImageButton = document.getElementById("add-image");
 const previewImage = document.getElementById("preview-image");
+const textArea = document.getElementById("text-area");
 
 let currentImageURL = null;
 
@@ -27,7 +28,11 @@ function render() {
     messagesDiv.scrollTop = messagesDiv.scrollHeight;
 }
 
-function addMessage() {
+//////////////////////////////
+//////////   EVENTS  /////////
+//////////////////////////////
+
+sendBtn.addEventListener("click", () => {  // send message (by clicking button)
     const text = textInput.value.trim();
     if (!text && !currentImageURL) return;
 
@@ -46,25 +51,37 @@ function addMessage() {
     currentImageURL = null;
 
     render();
-}
+});
 
-// change l'ambiance selon le speaker sélectionné (moi ou maman)
-function updateTheme() {
-    document.body.className = speakerSelect.value;
-}
+textInput.addEventListener("keydown", e => { // send message (by pushing enter key)
+    e.preventDefault();
 
-// bouton
-sendBtn.addEventListener("click", addMessage);
-
-// enter pour envoyer
-textInput.addEventListener("keydown", e => {
     if (e.key === "Enter" && !e.shiftKey) {
-        e.preventDefault();
-        addMessage();
+            const text = textInput.value.trim();
+    if (!text && !currentImageURL) return;
+
+    const speaker = speakerSelect.value;
+
+    messages.push({
+        speaker,
+        text,
+        image: currentImageURL || null
+    });
+
+    localStorage.setItem("journal", JSON.stringify(messages));
+
+    // reset
+    textInput.value = "";
+    currentImageURL = null;
+
+    render();
     }
 });
 
-speakerSelect.addEventListener("change", updateTheme);
+speakerSelect.addEventListener("change", () => { // select beetween maman and moi
+    document.body.className = speakerSelect.value;
+    textArea.className = speakerSelect.value;
+});
 
 addImageButton.addEventListener("click", () => {
     imageInput.click();
@@ -82,13 +99,17 @@ imageInput.addEventListener("change", () => {
     previewImage.style.display = "block";
 });
 
-clearBtn.addEventListener("click", () => {
+clearBtn.addEventListener("click", () => { // clear the conversation
     if (confirm("Effacer toute la conversation ?")) {
         messages = [];
         localStorage.setItem("journal", JSON.stringify(messages));
         render();
     }
 });
+
+////////////////////////////////
+//////////// INIT //////////////
+////////////////////////////////
 
 // on applique l'ambiance au chargement
 updateTheme();

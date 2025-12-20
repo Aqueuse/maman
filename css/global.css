@@ -11,30 +11,6 @@ body {
     color: #333;
 }
 
-/* ambiance neutre (moi) */
-body.moi {
-    background: #fafafa;
-    color: #222;
-
-    /* transition douce */
-    transition: background-color 1s ease, color 1s ease;
-}
-
-body.maman {
-    background-color: #ca8b2c;
-    background-image: url('maman.png');
-    background-repeat: no-repeat;
-
-    /* centrage vertical + position droite */
-    background-position: center;
-
-    /* taille de l'image */
-    background-size: 60%;
-
-    /* transition douce */
-    transition: background-color 1s ease, color 1s ease;
-}
-
 .app {
     max-width: 700px;
     margin: 0 auto;
@@ -87,18 +63,6 @@ h1 {
     max-width: 90%;
     line-height: 1.45;
     white-space: pre-wrap;
-}
-
-/* moi */
-.message.moi {
-    background: #e8ecf4;
-    align-self: flex-start;
-}
-
-/* maman */
-.message.maman {
-    background: #fff4d7;
-    align-self: flex-end;
 }
 
 #preview-container {
